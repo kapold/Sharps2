@@ -1,0 +1,11 @@
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\bin\Debug\LW2.exe.config
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\bin\Debug\LW2.exe
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\bin\Debug\LW2.pdb
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.csproj.AssemblyReference.cache
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.csproj.SuggestedBindingRedirects.cache
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.Properties.Resources.resources
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.csproj.GenerateResource.cache
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.csproj.CoreCompileInputs.cache
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.exe
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.pdb
+D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\obj\Debug\LW2.University.resources
