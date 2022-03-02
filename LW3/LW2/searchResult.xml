@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Антон</name>
+    <secondName>Максимович</secondName>
+    <surname>Адамович</surname>
+    <speciality>ПОИБМС</speciality>
+    <birthday>01.02.2022</birthday>
+    <course>1</course>
+    <group>4</group>
+    <averageMark>5</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Иван</name>
+    <secondName>Сергеевич</secondName>
+    <surname>Машук</surname>
+    <speciality>ПОИТ</speciality>
+    <birthday>03.02.2022</birthday>
+    <course>3</course>
+    <group>4</group>
+    <averageMark>10</averageMark>
+    <male>Male</male>
+    <address>
+      <city>1</city>
+      <index>111112</index>
+      <street>1</street>
+      <home>1</home>
+    </address>
+  </Student>
+</ArrayOfStudent><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /><?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
