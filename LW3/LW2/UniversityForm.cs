@@ -145,30 +145,7 @@ namespace LW2
 
         public string lastEventInfo = "";
         string stateOfTools = "Visible";
-        private void ConvertToXml(object sender, EventArgs e) // objects to xml
-        {
-            XmlSerialize.Serialize(students, path, false);
-            MessageBox.Show("Сериализовано!");
-            lastEventInfo = "Сериализация";
-        }
         
-        private void ShowFromXml(object sender, EventArgs e) // displays objects from xml
-        {
-            Student[] studentInfo = XmlSerialize.Deserialize(path);
-            lastEventInfo = "Десериализация";
-            
-            if (infoTableAboutStudents.Rows.Count > 1)
-            {
-                infoTableAboutStudents.Rows.Clear();
-            }
-            
-            foreach(var student in studentInfo)
-            {
-                string fullStudentName = $"{student.name} {student.secondName} {student.surname}";
-                string fullStudentAddress = $"{student.address.city} {student.address.home} {student.address.street} {student.address.index}";
-                infoTableAboutStudents.Rows.Add(fullStudentName, student.speciality, student.birthday, student.course, student.group, student.averageMark, student.male, fullStudentAddress);
-            }
-        }
 
         private void SearchButton(object sender, EventArgs e)
         {
@@ -278,7 +255,6 @@ namespace LW2
         }
         
         /*                      UNDO/REDO       TABLE                              */
-        private Stack<tempObj> states = new Stack<tempObj>();
         private uint count = 0;
         private void PrevButton(object sender, EventArgs e) // previous tool btn
         {
@@ -344,12 +320,53 @@ namespace LW2
             SearchButton(sender, e);
         }
 
-        private void studentName_TextChanged(object sender, EventArgs e)
+        private void ConvertToXml(object sender, EventArgs e)
         {
-            // tempObj temp = new tempObj();
-            // temp.place = "studentName";
-            // temp.value = studentName.Text;
-            // states.Push(temp);
+            XmlSerialize.Serialize(students, path, false);
+            MessageBox.Show("Сериализовано!");
+            lastEventInfo = "Сериализация";
+        }
+
+        private void ShowFromXml(object sender, EventArgs e)
+        {
+            Student[] studentInfo = XmlSerialize.Deserialize(path);
+            lastEventInfo = "Десериализация";
+            
+            if (infoTableAboutStudents.Rows.Count > 1)
+            {
+                infoTableAboutStudents.Rows.Clear();
+            }
+            
+            foreach(var student in studentInfo)
+            {
+                string fullStudentName = $"{student.name} {student.secondName} {student.surname}";
+                string fullStudentAddress = $"{student.address.city} {student.address.home} {student.address.street} {student.address.index}";
+                infoTableAboutStudents.Rows.Add(fullStudentName, student.speciality, student.birthday, student.course, student.group, student.averageMark, student.male, fullStudentAddress);
+            }
+        }
+
+        private void SearchBtn(object sender, EventArgs e)
+        {
+            lastEventInfo = "Поиск";
+            // SearchStudent();
+
+            SearchForm sForm = new SearchForm();
+            sForm.Show();
+            // if (FormStatus.isOpened == false)
+            // {
+            //     sForm.Show();
+            //     FormStatus.isOpened = true;
+            // }
+        }
+
+        private void SortGT(object sender, EventArgs e)
+        {
+            SortByGroupButton(sender, e);
+        }
+
+        private void SortCF(object sender, EventArgs e)
+        {
+            SortByCourseButton(sender, e);
         }
     }
 

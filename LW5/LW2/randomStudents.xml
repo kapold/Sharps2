@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <name>Роман</name>
+    <secondName>Александрович</secondName>
+    <surname>Адамович</surname>
+    <speciality>ДЭВИ</speciality>
+    <birthday>1992-09-10T00:00:00</birthday>
+    <course>3</course>
+    <group>7</group>
+    <averageMark>9.8</averageMark>
+    <male>male</male>
+    <address>
+      <city>Несвиж</city>
+      <index>175654</index>
+      <street>Ленина</street>
+      <home>186</home>
+    </address>
+  </Student>
+  <Student>
+    <name>Алена</name>
+    <secondName>Владимировна</secondName>
+    <surname>Котович</surname>
+    <speciality>ДЭВИ</speciality>
+    <birthday>2004-07-20T00:00:00</birthday>
+    <course>2</course>
+    <group>7</group>
+    <averageMark>6.1</averageMark>
+    <male>female</male>
+    <address>
+      <city>Городея</city>
+      <index>410057</index>
+      <street>Сталина</street>
+      <home>183</home>
+    </address>
+  </Student>
+</ArrayOfStudent>

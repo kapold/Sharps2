@@ -117,7 +117,6 @@ public partial class SearchForm : Form
             {
                 searchedItems = searchingInfo.Where(s => s.averageMark == obj.averageMark);
             }
-            
             if (!String.IsNullOrEmpty(searchFIO.Text) && !String.IsNullOrEmpty(searchSpec.Text)) // FIO + spec
             {
                 searchedItems = searchingInfo.Where(s => s.name == obj.name)
@@ -284,16 +283,7 @@ public partial class SearchForm : Form
             searchTable.Rows.Add(fullStudentName, student.speciality, student.birthday, student.course, student.group, student.averageMark, student.male, fullStudentAddress);
         }
     }
-
-    private void SearchButton(object sender, EventArgs e)
-    {
-        SearchStudent();
-    }
-
-    private void RegexButton(object sender, EventArgs e)
-    {
-        PrintTable(RegexS(regexBox.Text));
-    }
+    
     
     public static class XmlSerialize
     {
@@ -332,5 +322,15 @@ public partial class SearchForm : Form
 
             return students;
         }
+    }
+
+    private void SearchButton(object sender, EventArgs e)
+    {
+        SearchStudent();
+    }
+
+    private void RegexButton(object sender, EventArgs e)
+    {
+        PrintTable(RegexS(regexBox.Text));
     }
 }

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEA5144D-3F53-4D45-A85E-531EB8240795}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LW2</RootNamespace>
+    <AssemblyName>LW2</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract Factory\AbstractFactory.cs" />
+    <Compile Include="Abstract Factory\Factory.cs" />
+    <Compile Include="Abstract Factory\LearnerProduct.cs" />
+    <Compile Include="Abstract Factory\LecturerF.cs" />
+    <Compile Include="Abstract Factory\PupilF.cs" />
+    <Compile Include="Abstract Factory\SchoolFactory.cs" />
+    <Compile Include="Abstract Factory\StudentF.cs" />
+    <Compile Include="Abstract Factory\TeacherF.cs" />
+    <Compile Include="Abstract Factory\TeachingProduct.cs" />
+    <Compile Include="Abstract Factory\UniverFactory.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="Builder\Director.cs" />
+    <Compile Include="Builder\IBuilder.cs" />
+    <Compile Include="Builder\StudentBuilder.cs" />
+    <Compile Include="Component\Component.cs" />
+    <Compile Include="Composite\Component.cs" />
+    <Compile Include="Composite\CompositeAddress.cs" />
+    <Compile Include="Momento\History.cs" />
+    <Compile Include="Momento\Memento.cs" />
+    <Compile Include="Prototype\IPrototype.cs" />
+    <Compile Include="Proxy\Proxy.cs" />
+    <Compile Include="Proxy\ISubject.cs" />
+    <Compile Include="Singleton\SingletonForm.cs" />
+    <Compile Include="University.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="University.Designer.cs">
+      <DependentUpon>University.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="XmlSerialize.cs" />
+    <EmbeddedResource Include="University.resx">
+      <DependentUpon>University.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

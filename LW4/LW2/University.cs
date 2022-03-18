@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml.Serialization;
+using LW2.Abstract_Factory;
 
 namespace LW2
 {
@@ -12,9 +12,26 @@ namespace LW2
         public University()
         {
             InitializeComponent();
+
+            studentBirthday.MaxDate = DateTime.Today;
         }
 
         List<Student> students = new List<Student>();
+        
+        private void PrintTable(IEnumerable<Student> arr)
+        {
+            if (infoTableAboutStudents.Rows.Count > 1)
+            {
+                infoTableAboutStudents.Rows.Clear();
+            }
+            
+            foreach(var student in arr)
+            {
+                string fullStudentName = $"{student.name} {student.secondName} {student.surname}";
+                string fullStudentAddress = $"{student.address.city} {student.address.home} {student.address.street} {student.address.index}";
+                infoTableAboutStudents.Rows.Add(fullStudentName, student.speciality, student.birthday, student.course, student.group, student.averageMark, student.male, fullStudentAddress);
+            }
+        }
 
         private void AddStudentButton(object sender, EventArgs e) // Add
         {
@@ -81,7 +98,7 @@ namespace LW2
         }
 
         string path =
-            Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW2\LW2\students.xml");
+            Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW4\LW2\students.xml");
         private void ConvertToXml(object sender, EventArgs e) // objects to xml
         {
             XmlSerialize.Serialize(students, path);
@@ -92,17 +109,7 @@ namespace LW2
         {
             Student[] studentInfo = XmlSerialize.Deserialize(path);
             
-            if (infoTableAboutStudents.Rows.Count > 1)
-            {
-                infoTableAboutStudents.Rows.Clear();
-            }
-            
-            foreach(var student in studentInfo)
-            {
-                string fullStudentName = $"{student.name} {student.secondName} {student.surname}";
-                string fullStudentAddress = $"{student.address.city} {student.address.home} {student.address.street} {student.address.index}";
-                infoTableAboutStudents.Rows.Add(fullStudentName, student.speciality, student.birthday, student.course, student.group, student.averageMark, student.male, fullStudentAddress);
-            }
+            PrintTable(studentInfo);
         }
 
         private void University_Load(object sender, EventArgs e)
@@ -110,72 +117,98 @@ namespace LW2
             Size = new Size(1230, 630);
         }
 
-        //                                        PATTERNS
-        private void BuilderButton(object sender, EventArgs e)
+        public Student getRanStudent()
         {
-            Univer univer = new Univer();
-            // билдер для студента 1 курса
-            StudentBuilder studentBuilder = new Student1C();
-            StudentB student1 = univer.Study(studentBuilder);
-            MessageBox.Show(student1.ToString());
-            // билдер для студента 2 курса
-            studentBuilder = new Student2C();
-            StudentB student2 = univer.Study(studentBuilder);
-            MessageBox.Show(student2.ToString());
+            Director director = new Director();
+            StudentBuilder studentBuilder = new StudentBuilder();
+
+            director.Builder = studentBuilder;
+            director.BuildRandomStudent();
+
+            return studentBuilder.GetStudent();
         }
+        string randomStudentsPath =
+            Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW4\LW2\randomStudents.xml");
         
-        private void FactoryButton(object sender, EventArgs e)
+        //                                        PATTERNS
+
+        private List<Student> randomStudents = new List<Student>();
+
+        private void BuilderBtn_Click(object sender, EventArgs e)
         {
-            ContinentFactory africa = new AfricaFactory();
+            randomStudents.Add(getRanStudent());
             
-            AnimalWorld world = new AnimalWorld(africa);
-            world.RunFoodChain();
-            
-            ContinentFactory america = new AmericaFactory();
-            world = new AnimalWorld(america);
-            world.RunFoodChain();
+            XmlSerialize.Serialize(randomStudents, randomStudentsPath);
+            PrintTable(randomStudents);
         }
 
-        private void SingletonButton(object sender, EventArgs e)
+        private void SingletonBtn_Click(object sender, EventArgs e)
         {
             SingletonForm singletonForm = SingletonForm.getSingle(BackColor, Font, Size);
             MessageBox.Show(singletonForm.ToString());
         }
 
-        private void PrototypeButton(object sender, EventArgs e)
+        private void AbsFactBtn_Click(object sender, EventArgs e)
         {
-            IFigure rectangle = new Rectangle(50, 20);
-            IFigure clonedRectangle = rectangle.Clone();
-            MessageBox.Show("<-- Прямоугольник -->");
-            rectangle.GetInfo();
-            MessageBox.Show("<-- Клонированный прямоугольник -->");
-            clonedRectangle.GetInfo();
-        }
-    }
-
-    public static class XmlSerialize
-    {
-        public static void Serialize(List<Student> obj, string fileName)
-        {
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Student>));
-
-            using (StreamWriter sw = new StreamWriter(fileName, false))
+            if (factoryBox.Text == "School")
             {
-                formatter.Serialize(sw, obj);
+                Factory factory = new Factory(new SchoolFactory());
+                factory.InfoAboutFactory();
+            }
+            else if (factoryBox.Text == "Univer")
+            {
+                Factory factory = new Factory(new UniverFactory());
+                factory.InfoAboutFactory();
+            }
+            else
+            {
+                MessageBox.Show("Выберите фабрику!");
             }
         }
-        
-        public static Student[] Deserialize(string fileName)
+
+        private void PrototypeBtn_Click(object sender, EventArgs e)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(Student[]));
-            Student[] students;
+            try
+            {
+                int ind = infoTableAboutStudents.CurrentRow.Index;
+                string fio = (string) infoTableAboutStudents.Rows[ind].Cells[0].Value;
+                string[] splFIO = fio.Split(' ');
+                string name = splFIO[1];
+                string surname = splFIO[0];
+                string secondName = splFIO[2];
+                string speciality = (string) infoTableAboutStudents.Rows[ind].Cells[1].Value;
+                DateTime birthday = (DateTime) infoTableAboutStudents.Rows[ind].Cells[2].Value;
+                int course = (int) infoTableAboutStudents.Rows[ind].Cells[3].Value;
+                int group = (int) infoTableAboutStudents.Rows[ind].Cells[4].Value;
+                float averMark = (float) infoTableAboutStudents.Rows[ind].Cells[5].Value;
+                string male = (string) infoTableAboutStudents.Rows[ind].Cells[6].Value;
+                Address address = new Address();
+                string selectedAddress = (string) infoTableAboutStudents.Rows[ind].Cells[7].Value;
+                string[] splitedAddress = selectedAddress.Split(' ');
+                address.city = splitedAddress[0];
+                address.home = Convert.ToInt32(splitedAddress[1]);
+                address.index = Convert.ToInt32(splitedAddress[2]);
+                address.street = splitedAddress[3];
             
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
-            {
-                students = (Student[]) formatter.Deserialize(fs);
-            }
+                Student stud = new Student(address);
+                stud.name = name;
+                stud.surname = surname;
+                stud.secondName = secondName;
+                stud.speciality = speciality;
+                stud.birthday = birthday;
+                stud.course = course;
+                stud.group = group;
+                stud.averageMark = averMark;
+                stud.male = male;
 
-            return students;
+                IPrototype student = new Student(stud);
+                IPrototype copiedStudent = student.Clone();
+                copiedStudent.GetInfo();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Выберите студента!");
+            }
         }
     }
 }

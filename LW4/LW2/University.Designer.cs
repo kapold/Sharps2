@@ -72,10 +72,12 @@
             this.studMale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.BuilderBtn = new System.Windows.Forms.Button();
+            this.SingletonBtn = new System.Windows.Forms.Button();
+            this.AbsFactBtn = new System.Windows.Forms.Button();
+            this.PrototypeBtn = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.factoryBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize) (this.studentAverageMark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.infoTableAboutStudents)).BeginInit();
             this.SuspendLayout();
@@ -225,16 +227,16 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.label9.Location = new System.Drawing.Point(28, 552);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 20);
+            this.label9.Size = new System.Drawing.Size(76, 20);
             this.label9.TabIndex = 15;
-            this.label9.Text = "Средняя оценка:";
+            this.label9.Text = "Оценка:";
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Monotype Corsiva", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label10.Location = new System.Drawing.Point(28, 60);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 25);
+            this.label10.Size = new System.Drawing.Size(88, 25);
             this.label10.TabIndex = 17;
             this.label10.Text = "БГТУ";
             // 
@@ -493,49 +495,68 @@
             this.label17.Text = "Информация\r\nО\r\nСтудентах";
             this.label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
+            // BuilderBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button1.Location = new System.Drawing.Point(672, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 57);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Builder";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BuilderButton);
+            this.BuilderBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.BuilderBtn.Location = new System.Drawing.Point(672, 76);
+            this.BuilderBtn.Name = "BuilderBtn";
+            this.BuilderBtn.Size = new System.Drawing.Size(167, 57);
+            this.BuilderBtn.TabIndex = 42;
+            this.BuilderBtn.Text = "Builder";
+            this.BuilderBtn.UseVisualStyleBackColor = true;
+            this.BuilderBtn.Click += new System.EventHandler(this.BuilderBtn_Click);
             // 
-            // button2
+            // SingletonBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button2.Location = new System.Drawing.Point(829, 76);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 57);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Abstract Factory";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.FactoryButton);
+            this.SingletonBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.SingletonBtn.Location = new System.Drawing.Point(672, 13);
+            this.SingletonBtn.Name = "SingletonBtn";
+            this.SingletonBtn.Size = new System.Drawing.Size(211, 57);
+            this.SingletonBtn.TabIndex = 43;
+            this.SingletonBtn.Text = "Singleton";
+            this.SingletonBtn.UseVisualStyleBackColor = true;
+            this.SingletonBtn.Click += new System.EventHandler(this.SingletonBtn_Click);
             // 
-            // button5
+            // AbsFactBtn
             // 
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button5.Location = new System.Drawing.Point(672, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(202, 57);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Singleton";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.SingletonButton);
+            this.AbsFactBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.AbsFactBtn.Location = new System.Drawing.Point(845, 76);
+            this.AbsFactBtn.Name = "AbsFactBtn";
+            this.AbsFactBtn.Size = new System.Drawing.Size(217, 57);
+            this.AbsFactBtn.TabIndex = 44;
+            this.AbsFactBtn.Text = "Abstract Factory";
+            this.AbsFactBtn.UseVisualStyleBackColor = true;
+            this.AbsFactBtn.Click += new System.EventHandler(this.AbsFactBtn_Click);
             // 
-            // button6
+            // PrototypeBtn
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button6.Location = new System.Drawing.Point(880, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(151, 57);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Prototype";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.PrototypeButton);
+            this.PrototypeBtn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.PrototypeBtn.Location = new System.Drawing.Point(889, 13);
+            this.PrototypeBtn.Name = "PrototypeBtn";
+            this.PrototypeBtn.Size = new System.Drawing.Size(173, 57);
+            this.PrototypeBtn.TabIndex = 45;
+            this.PrototypeBtn.Text = "Prototype";
+            this.PrototypeBtn.UseVisualStyleBackColor = true;
+            this.PrototypeBtn.Click += new System.EventHandler(this.PrototypeBtn_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label18.Location = new System.Drawing.Point(1086, 13);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(89, 20);
+            this.label18.TabIndex = 46;
+            this.label18.Text = "Фабрика:";
+            // 
+            // factoryBox
+            // 
+            this.factoryBox.FormattingEnabled = true;
+            this.factoryBox.Items.AddRange(new object[] {"School", "Univer"});
+            this.factoryBox.Location = new System.Drawing.Point(1086, 36);
+            this.factoryBox.Name = "factoryBox";
+            this.factoryBox.Size = new System.Drawing.Size(136, 24);
+            this.factoryBox.TabIndex = 47;
             // 
             // University
             // 
@@ -543,10 +564,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1598, 715);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.factoryBox);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.PrototypeBtn);
+            this.Controls.Add(this.AbsFactBtn);
+            this.Controls.Add(this.SingletonBtn);
+            this.Controls.Add(this.BuilderBtn);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.infoTableAboutStudents);
             this.Controls.Add(this.studentAverageMark);
@@ -593,9 +616,18 @@
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox factoryBox;
 
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+
+        private System.Windows.Forms.Button PrototypeBtn;
+
+        private System.Windows.Forms.Button AbsFactBtn;
+
+        private System.Windows.Forms.Button SingletonBtn;
+
+        private System.Windows.Forms.Button BuilderBtn;
 
         private System.Windows.Forms.Label label17;
 
@@ -607,11 +639,8 @@
 
         private System.Windows.Forms.Button addButton;
 
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-
-        private System.Windows.Forms.Button button1;
 
 
         private System.Windows.Forms.Label label16;

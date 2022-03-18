@@ -35,14 +35,12 @@ partial class SearchForm
         this.label2 = new System.Windows.Forms.Label();
         this.label4 = new System.Windows.Forms.Label();
         this.searchFIO = new System.Windows.Forms.TextBox();
-        this.button1 = new System.Windows.Forms.Button();
         this.label5 = new System.Windows.Forms.Label();
         this.searchSpec = new System.Windows.Forms.ComboBox();
         this.regexBox = new System.Windows.Forms.TextBox();
         this.searchCourse = new System.Windows.Forms.ComboBox();
         this.label1 = new System.Windows.Forms.Label();
         this.searchMark = new System.Windows.Forms.TrackBar();
-        this.button2 = new System.Windows.Forms.Button();
         this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +50,8 @@ partial class SearchForm
         this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
         this.searchTable = new System.Windows.Forms.DataGridView();
+        this.formSearchB = new System.Windows.Forms.Button();
+        this.regexSearchF = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize) (this.searchMark)).BeginInit();
         ((System.ComponentModel.ISupportInitialize) (this.searchTable)).BeginInit();
         this.SuspendLayout();
@@ -93,17 +93,6 @@ partial class SearchForm
         this.searchFIO.Name = "searchFIO";
         this.searchFIO.Size = new System.Drawing.Size(233, 30);
         this.searchFIO.TabIndex = 72;
-        // 
-        // button1
-        // 
-        this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-        this.button1.Location = new System.Drawing.Point(877, 557);
-        this.button1.Name = "button1";
-        this.button1.Size = new System.Drawing.Size(233, 57);
-        this.button1.TabIndex = 69;
-        this.button1.Text = "Поиск";
-        this.button1.UseVisualStyleBackColor = true;
-        this.button1.Click += new System.EventHandler(this.SearchButton);
         // 
         // label5
         // 
@@ -160,17 +149,6 @@ partial class SearchForm
         this.searchMark.Name = "searchMark";
         this.searchMark.Size = new System.Drawing.Size(233, 56);
         this.searchMark.TabIndex = 76;
-        // 
-        // button2
-        // 
-        this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-        this.button2.Location = new System.Drawing.Point(877, 482);
-        this.button2.Name = "button2";
-        this.button2.Size = new System.Drawing.Size(233, 57);
-        this.button2.TabIndex = 69;
-        this.button2.Text = "Regex поиск";
-        this.button2.UseVisualStyleBackColor = true;
-        this.button2.Click += new System.EventHandler(this.RegexButton);
         // 
         // dataGridViewTextBoxColumn8
         // 
@@ -249,20 +227,41 @@ partial class SearchForm
         this.searchTable.Size = new System.Drawing.Size(789, 586);
         this.searchTable.TabIndex = 69;
         // 
+        // formSearchB
+        // 
+        this.formSearchB.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+        this.formSearchB.Location = new System.Drawing.Point(877, 557);
+        this.formSearchB.Name = "formSearchB";
+        this.formSearchB.Size = new System.Drawing.Size(233, 57);
+        this.formSearchB.TabIndex = 60;
+        this.formSearchB.Text = "Поиск";
+        this.formSearchB.UseVisualStyleBackColor = true;
+        // 
+        // regexSearchF
+        // 
+        this.regexSearchF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+        this.regexSearchF.Location = new System.Drawing.Point(877, 494);
+        this.regexSearchF.Name = "regexSearchF";
+        this.regexSearchF.Size = new System.Drawing.Size(233, 57);
+        this.regexSearchF.TabIndex = 77;
+        this.regexSearchF.Text = "Regex";
+        this.regexSearchF.UseVisualStyleBackColor = true;
+        this.regexSearchF.Click += new System.EventHandler(this.RegexButton);
+        // 
         // SearchForm
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.BackColor = System.Drawing.SystemColors.Control;
         this.ClientSize = new System.Drawing.Size(1152, 648);
-        this.Controls.Add(this.button2);
+        this.Controls.Add(this.regexSearchF);
+        this.Controls.Add(this.formSearchB);
         this.Controls.Add(this.searchMark);
         this.Controls.Add(this.label1);
         this.Controls.Add(this.searchCourse);
         this.Controls.Add(this.regexBox);
         this.Controls.Add(this.searchSpec);
         this.Controls.Add(this.label5);
-        this.Controls.Add(this.button1);
         this.Controls.Add(this.searchFIO);
         this.Controls.Add(this.searchTable);
         this.Controls.Add(this.label4);
@@ -275,6 +274,9 @@ partial class SearchForm
         this.ResumeLayout(false);
         this.PerformLayout();
     }
+
+    private System.Windows.Forms.Button formSearchB;
+    private System.Windows.Forms.Button regexSearchF;
 
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.Label label2;

@@ -47,11 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract Factory\AbstractFactory.cs" />
+    <Compile Include="Abstract Factory\Factory.cs" />
+    <Compile Include="Abstract Factory\LearnerProduct.cs" />
+    <Compile Include="Abstract Factory\LecturerF.cs" />
+    <Compile Include="Abstract Factory\PupilF.cs" />
+    <Compile Include="Abstract Factory\SchoolFactory.cs" />
+    <Compile Include="Abstract Factory\StudentF.cs" />
+    <Compile Include="Abstract Factory\TeacherF.cs" />
+    <Compile Include="Abstract Factory\TeachingProduct.cs" />
+    <Compile Include="Abstract Factory\UniverFactory.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="Builder.cs" />
-    <Compile Include="AbstractFactory.cs" />
-    <Compile Include="Prototype.cs" />
-    <Compile Include="SingletonForm.cs" />
+    <Compile Include="Builder\Director.cs" />
+    <Compile Include="Builder\IBuilder.cs" />
+    <Compile Include="Builder\StudentBuilder.cs" />
+    <Compile Include="Prototype\IPrototype.cs" />
+    <Compile Include="Singleton\SingletonForm.cs" />
     <Compile Include="University.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +72,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="XmlSerialize.cs" />
     <EmbeddedResource Include="University.resx">
       <DependentUpon>University.cs</DependentUpon>
     </EmbeddedResource>

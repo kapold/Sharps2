@@ -60,8 +60,6 @@
             this.addressIndex = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.studentAverageMark = new System.Windows.Forms.TrackBar();
             this.infoTableAboutStudents = new System.Windows.Forms.DataGridView();
             this.studName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +71,6 @@
             this.studMale = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -99,7 +95,11 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.xmlButton = new System.Windows.Forms.Button();
+            this.fromXML = new System.Windows.Forms.Button();
+            this.searchButtomF = new System.Windows.Forms.Button();
+            this.sortGT = new System.Windows.Forms.Button();
+            this.sortCF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.studentAverageMark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.infoTableAboutStudents)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -154,7 +154,6 @@
             this.studentName.Name = "studentName";
             this.studentName.Size = new System.Drawing.Size(233, 30);
             this.studentName.TabIndex = 4;
-            this.studentName.TextChanged += new System.EventHandler(this.studentName_TextChanged);
             // 
             // studentSecondName
             // 
@@ -409,28 +408,6 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearFormButton);
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button3.Location = new System.Drawing.Point(340, 629);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(233, 57);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "In XML";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.ConvertToXml);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button4.Location = new System.Drawing.Point(340, 692);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(233, 57);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "From XML";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.ShowFromXml);
-            // 
             // studentAverageMark
             // 
             this.studentAverageMark.Location = new System.Drawing.Point(16, 641);
@@ -526,28 +503,6 @@
             this.label17.Text = "Информаиця\r\nО Студентах";
             this.label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button1.Location = new System.Drawing.Point(660, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 70);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SearchButton);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button2.Location = new System.Drawing.Point(1062, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 69);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Сортировка по курсу";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.SortByCourseButton);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.MistyRose;
@@ -623,12 +578,12 @@
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.toolStripButton4.Image = ((System.Drawing.Image) (resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(86, 26);
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 26);
             this.toolStripButton4.Text = "Очистка";
             this.toolStripButton4.Click += new System.EventHandler(this.ClearToolStrip);
             // 
@@ -639,12 +594,12 @@
             // 
             // toolStripButton7
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.toolStripButton7.Image = ((System.Drawing.Image) (resources.GetObject("toolStripButton7.Image")));
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(64, 26);
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 26);
             this.toolStripButton7.Text = "Назад";
             this.toolStripButton7.Click += new System.EventHandler(this.PrevButton);
             // 
@@ -655,12 +610,12 @@
             // 
             // toolStripButton6
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButton6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.toolStripButton6.Image = ((System.Drawing.Image) (resources.GetObject("toolStripButton6.Image")));
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(76, 26);
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 26);
             this.toolStripButton6.Text = "Вперед";
             this.toolStripButton6.Click += new System.EventHandler(this.NextButton);
             // 
@@ -676,6 +631,7 @@
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(23, 26);
+            this.toolStripButton5.ToolTipText = "Скрыть панель";
             this.toolStripButton5.Click += new System.EventHandler(this.HideArrowButton);
             // 
             // statusStrip1
@@ -737,16 +693,60 @@
             this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
             this.toolStripStatusLabel7.Size = new System.Drawing.Size(0, 27);
             // 
-            // button6
+            // xmlButton
             // 
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.button6.Location = new System.Drawing.Point(845, 88);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(202, 69);
-            this.button6.TabIndex = 57;
-            this.button6.Text = "Сортировка по группе";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.SortByGroupButton);
+            this.xmlButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.xmlButton.Location = new System.Drawing.Point(340, 629);
+            this.xmlButton.Name = "xmlButton";
+            this.xmlButton.Size = new System.Drawing.Size(233, 57);
+            this.xmlButton.TabIndex = 57;
+            this.xmlButton.Text = "In XML";
+            this.xmlButton.UseVisualStyleBackColor = true;
+            this.xmlButton.Click += new System.EventHandler(this.ConvertToXml);
+            // 
+            // fromXML
+            // 
+            this.fromXML.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.fromXML.Location = new System.Drawing.Point(340, 692);
+            this.fromXML.Name = "fromXML";
+            this.fromXML.Size = new System.Drawing.Size(233, 57);
+            this.fromXML.TabIndex = 58;
+            this.fromXML.Text = "From XML";
+            this.fromXML.UseVisualStyleBackColor = true;
+            this.fromXML.Click += new System.EventHandler(this.ShowFromXml);
+            // 
+            // searchButtomF
+            // 
+            this.searchButtomF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.searchButtomF.Location = new System.Drawing.Point(660, 88);
+            this.searchButtomF.Name = "searchButtomF";
+            this.searchButtomF.Size = new System.Drawing.Size(233, 79);
+            this.searchButtomF.TabIndex = 59;
+            this.searchButtomF.Text = "Поиск";
+            this.searchButtomF.UseVisualStyleBackColor = true;
+            this.searchButtomF.Click += new System.EventHandler(this.SearchBtn);
+            // 
+            // sortGT
+            // 
+            this.sortGT.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.sortGT.Location = new System.Drawing.Point(912, 88);
+            this.sortGT.Name = "sortGT";
+            this.sortGT.Size = new System.Drawing.Size(205, 79);
+            this.sortGT.TabIndex = 60;
+            this.sortGT.Text = "Сортировка по группе";
+            this.sortGT.UseVisualStyleBackColor = true;
+            this.sortGT.Click += new System.EventHandler(this.SortGT);
+            // 
+            // sortCF
+            // 
+            this.sortCF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.sortCF.Location = new System.Drawing.Point(1141, 87);
+            this.sortCF.Name = "sortCF";
+            this.sortCF.Size = new System.Drawing.Size(201, 79);
+            this.sortCF.TabIndex = 61;
+            this.sortCF.Text = "Сортировка по курсу";
+            this.sortCF.UseVisualStyleBackColor = true;
+            this.sortCF.Click += new System.EventHandler(this.SortCF);
             // 
             // UniversityForm
             // 
@@ -754,16 +754,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1604, 805);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.sortCF);
+            this.Controls.Add(this.sortGT);
+            this.Controls.Add(this.searchButtomF);
+            this.Controls.Add(this.fromXML);
+            this.Controls.Add(this.xmlButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.infoTableAboutStudents);
             this.Controls.Add(this.studentAverageMark);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.addressIndex);
@@ -812,6 +812,18 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button sortCF;
+
+        private System.Windows.Forms.Button sortGT;
+
+        private System.Windows.Forms.Button button1;
+
+        private System.Windows.Forms.Button searchButtomF;
+
+        private System.Windows.Forms.Button fromXML;
+
+        private System.Windows.Forms.Button xmlButton;
 
         private System.Windows.Forms.ToolStripButton toolStripButton1;
 
@@ -863,8 +875,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-
-        private System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.MenuStrip menuStrip1;
 
