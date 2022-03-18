@@ -1,3 +1,3 @@
-Sharps2\n
-<- Second semestr of C# language ;->\n
+Sharps2
+<- Second semestr of C# language ;->
 <-- CHECK MASTER BRANCH FOR LABS -->
