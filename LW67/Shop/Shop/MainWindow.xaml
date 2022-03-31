@@ -1,0 +1,141 @@
+﻿<Window x:Class="Shop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop"
+        mc:Ignorable="d"
+        Title="{DynamicResource titleName}" Height="700" Width="1100"
+        Icon="Images/shopImg.png">
+    <Window.Resources></Window.Resources>
+
+    <Grid x:Name="shopGrid" Margin="0" Background="Cornsilk">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="94*"/>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="187*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Menu Grid.ColumnSpan="4" x:Name="mainMenu" Margin="0,0,0,5">
+            <MenuItem x:Name="addBook" Header="{DynamicResource menuAddButton}" Command="{Binding AddBook}" Width="auto" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <MenuItem x:Name="xmlIn" Header="{DynamicResource menuXmlIn}" Command="{Binding SaveInXML}" Width="auto" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <MenuItem x:Name="xmlOut" Header="{DynamicResource menuXmlOut}" Command="{Binding LoadFromXML}" Width="auto" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <MenuItem x:Name="sortMenu" Header="{DynamicResource menuSort}" Width="auto" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem x:Name="sortByPrice" Header="{DynamicResource menuSortPrice}" Command="{Binding PriceSort}"/>
+                <MenuItem x:Name="sortByCount" Header="{DynamicResource menuSortCount}" Command="{Binding CountSort}"/>
+            </MenuItem>
+            <MenuItem x:Name="searchMenu" Header="{DynamicResource menuSearch}" Width="auto" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem x:Name="searchMenuPrice" Header="{DynamicResource rangeSearch}" Command="{Binding SearchBook}"/>
+                <MenuItem x:Name="searchMenuName" Header="{DynamicResource nameSearch}" Command="{Binding SearchByName}"/>
+            </MenuItem>
+            <MenuItem x:Name="selectionMenu" Header="{DynamicResource menuSelection}" Width="auto" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem x:Name="selectionByPrice" Click="PriceSelection" Header="{DynamicResource menuSelectionPrice}"/>
+                <MenuItem x:Name="selectionByGenre" Header="{DynamicResource menuSelectionGenre}">
+                    <MenuItem x:Name="detectiveSelect" Click="GenreDetectiveSelection" Header="{DynamicResource menuDetectiveSelect}"/>
+                    <MenuItem x:Name="romanceSelect" Click="GenreRomanceSelection" Header="{DynamicResource menuRomanceSelect}"/>
+                    <MenuItem x:Name="adventureSelect" Click="GenreAdventureSelection" Header="{DynamicResource menuAdventureSelect}"/>
+                    <MenuItem x:Name="fantasySelect" Click="GenreFantasySelection" Header="{DynamicResource menuFantasySelect}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="switchLanguage" Header="{DynamicResource menuSwitchLang}" Width="auto" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem x:Name="ruLang" Header="{DynamicResource menuRuLang}" Command="{Binding SwitchLanguageRussian}"/>
+                <MenuItem x:Name="euLang" Header="{DynamicResource menuEuLang}" Command="{Binding SwitchLanguageEng}"/>
+            </MenuItem>
+        </Menu>
+
+        <Viewbox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="70" Grid.Row="1" VerticalAlignment="Center" Width="330" Margin="38,0,0,0">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" TextAlignment="Left" FontFamily="Segoe Print" FontSize="16" FontWeight="Normal" ><Run Text="{DynamicResource textBox}"/><LineBreak/><Run Text="{DynamicResource textBoxAfter}"/></TextBlock>
+        </Viewbox>
+
+        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Height="35" Margin="137,12,0,0" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Right" Text="{DynamicResource selectionTextBox}" VerticalAlignment="Top" Width="auto" FontFamily="Segoe Print" FontSize="16" FontWeight="Normal"/>
+
+        <ListBox x:Name="booksListBox" Grid.RowSpan="4" Background="#FFCC9999" Grid.ColumnSpan="2" Margin="0,93,0,0" Grid.Row="1" Foreground="#FFC3C3C3" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image x:Name="BookImage" Source="{Binding Path=imagePath}" Width="100" Height="150"></Image>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <!-- Название книги-->
+                            <TextBlock x:Name="BookName" FontSize="16" Text="{Binding Path=name}" Margin="0,2,0,0" Foreground="Black" FontWeight="DemiBold"/>
+                            <!-- Автор -->
+                            <TextBlock FontSize="16" Text="{Binding Path=author}" Foreground="Black" Margin="0,0,0,20"/>
+                            <!-- Цена -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{Binding Path=price}" HorizontalAlignment="Center" Foreground="White"/>
+                                <TextBlock FontSize="16" Text=" BYN" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                            <!-- Количество -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="Количество: " HorizontalAlignment="Center" Foreground="Black"/>
+                                <TextBlock FontSize="16" Text="{Binding Path=count}" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                            <!-- Кнопки для книг -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Описание" Margin="0,0,9,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="GetBookInfo" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Изменить" Margin="0,0,10,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="ChangeCurrentBook" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Удалить" Margin="0,0,20,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="DeleteCount" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="selectionListBox" Background="#FFCC9999" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Grid.RowSpan="4" Margin="0,93,0,0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image x:Name="BookImageSelect" Source="{Binding Path=imagePath}" Width="100" Height="150"></Image>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <!-- Название книги-->
+                            <TextBlock x:Name="BookNameSelect" FontSize="16" Text="{Binding Path=name}" Margin="0,2,0,0" Foreground="Black" FontWeight="DemiBold"/>
+                            <!-- Автор -->
+                            <TextBlock FontSize="16" Text="{Binding Path=author}" Foreground="Black" Margin="0,0,0,20"/>
+                            <!-- Цена -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{Binding Path=price}" HorizontalAlignment="Center" Foreground="White"/>
+                                <TextBlock FontSize="16" Text=" BYN" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                            <!-- Количество -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="Количество: " HorizontalAlignment="Center" Foreground="Black"/>
+                                <TextBlock FontSize="16" Text="{Binding Path=count}" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                            <!-- Кнопки для книг -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Описание" Margin="0,0,9,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="GetBookInfo" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Изменить" Margin="0,0,10,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="ChangeCurrentBook" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Удалить" Margin="0,0,20,0" Foreground="Cornsilk"></TextBlock>
+                                <Button Click="DeleteCount" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+
+</Window>
