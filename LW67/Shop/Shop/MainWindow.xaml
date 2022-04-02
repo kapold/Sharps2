@@ -75,20 +75,20 @@
                             </StackPanel>
                             <!-- Количество -->
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="16" Text="Количество: " HorizontalAlignment="Center" Foreground="Black"/>
+                                <TextBlock FontSize="16" Text="{DynamicResource countLB}" HorizontalAlignment="Center" Foreground="Black"/>
                                 <TextBlock FontSize="16" Text="{Binding Path=count}" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
                             <!-- Кнопки для книг -->
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Описание" Margin="0,0,9,0" Foreground="Cornsilk"></TextBlock>
+                                <TextBlock Text="{DynamicResource descriptionLB}" Margin="0,0,9,0" Foreground="Cornsilk"></TextBlock>
                                 <Button Click="GetBookInfo" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Изменить" Margin="0,0,10,0" Foreground="Cornsilk"></TextBlock>
+                                <TextBlock Text="{DynamicResource changeLB}" Margin="0,0,10,0" Foreground="Cornsilk"></TextBlock>
                                 <Button Click="ChangeCurrentBook" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Удалить" Margin="0,0,20,0" Foreground="Cornsilk"></TextBlock>
+                                <TextBlock Text="{DynamicResource deleteLB}" Margin="0,0,20,0" Foreground="Cornsilk"></TextBlock>
                                 <Button Click="DeleteCount" Width="15" Content="{Binding Path=ID}" BorderBrush="White" Background="White" Margin="0,0,20,0" Foreground="White" FontSize="0.01"/>
                             </StackPanel>
                         </StackPanel>

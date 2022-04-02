@@ -2,17 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Shop.ChangeBook
 {
@@ -22,7 +12,6 @@ namespace Shop.ChangeBook
     public partial class Change : Window
     {
         Book currentBook = new Book();
-        private MainWindow mainWnd = new MainWindow();
         private int CurrentID = 0;
         public static string libraryPath =
            System.IO.Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW67\Shop\Shop\library.xml");
@@ -102,6 +91,8 @@ namespace Shop.ChangeBook
             {
                 MessageBox.Show(ex.Source);
             }
+
+            this.Close();
         }
 
         private void changeImage(object sender, RoutedEventArgs e)

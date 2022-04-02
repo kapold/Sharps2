@@ -62,5 +62,11 @@
     <!-- Selection-->
     <v:String x:Key="selectionTextBox">Selection</v:String>
     
+    <!-- ListBox -->
+    <v:String x:Key="countLB">Count: </v:String>
+    <v:String x:Key="descriptionLB">Description</v:String>
+    <v:String x:Key="changeLB">Change</v:String>
+    <v:String x:Key="deleteLB">Delete</v:String>
+    
 
 </ResourceDictionary>

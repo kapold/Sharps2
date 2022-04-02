@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Resources;
+using Shop.ChangeBook;
 
 namespace Shop
 {
@@ -18,8 +19,6 @@ namespace Shop
         public static MainWindow mainForm;
         public static string libraryPath =
             Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW67\Shop\Shop\library.xml");
-        public static string testLibraryPath =
-            Path.GetFullPath(@"D:\Универ 2 курс\Университет 4 семестр\ООП\Лабораторные работы\LW67\Shop\Shop\testLibrary.xml");
         public List<Book> books = new List<Book>();
         public string languagePath = "LanguageSelector/ru-RU.xaml";
 
@@ -52,18 +51,10 @@ namespace Shop
             language.Source = new Uri(languagePath, UriKind.Relative);
         }
 
-        public void ShowBooksList(List<Book> list) // Выводим коллецию книг
+        private void ShowBooksList(List<Book> list) // Выводим коллецию книг
         {
             booksListBox.ItemsSource = null;
             booksListBox.ItemsSource = list;
-        }
-
-        public void AddBook(object sender, RoutedEventArgs e) // Добавляем книгу
-        {
-            addBook.Command = ApplicationCommands.New;
-
-            BookAddForm.AddBook addNewBook = new BookAddForm.AddBook(languagePath);
-            addNewBook.Show();
         }
 
         public void SaveInXML() // Загрузка в ХМЛ
@@ -136,7 +127,7 @@ namespace Shop
             ShowBooksList(sortedByCount);
         }
 
-        public void DeleteCount(object sender, RoutedEventArgs e)
+        private void DeleteCount(object sender, RoutedEventArgs e)
         {
             string h = e.Source.ToString().Last().ToString();
             int z = Convert.ToInt32(h);
@@ -151,8 +142,7 @@ namespace Shop
             XmlSerialize.Serialize(serializedBooks, libraryPath);
         }
 
-        // TODO: do change
-        public void ChangeCurrentBook(object sender, RoutedEventArgs e)
+        private void ChangeCurrentBook(object sender, RoutedEventArgs e)
         {
             int index = Convert.ToInt32(e.Source.ToString().Last().ToString());
             List<Book> serializedBooks = XmlSerialize.Deserialize(libraryPath);
@@ -160,7 +150,7 @@ namespace Shop
             change.Show();
         }
 
-        public void GetBookInfo(object sender, RoutedEventArgs e)
+        private void GetBookInfo(object sender, RoutedEventArgs e)
         {
             int index = Convert.ToInt32(e.Source.ToString().Last().ToString());
             List<Book> serializedBooks = XmlSerialize.Deserialize(libraryPath);
@@ -169,7 +159,7 @@ namespace Shop
         }
 
         // Жанры
-        public void GenreDetectiveSelection(object sender, RoutedEventArgs e)
+        private void GenreDetectiveSelection(object sender, RoutedEventArgs e)
         {
             selectionListBox.ItemsSource = null;
             if(isSelected)
@@ -184,7 +174,7 @@ namespace Shop
             selectionListBox.ItemsSource = selectionList;
         }
 
-        public void GenreRomanceSelection(object sender, RoutedEventArgs e)
+        private void GenreRomanceSelection(object sender, RoutedEventArgs e)
         {
             selectionListBox.ItemsSource = null;
             if (isSelected)
@@ -199,7 +189,7 @@ namespace Shop
             selectionListBox.ItemsSource = selectionList;
         }
 
-        public void GenreAdventureSelection(object sender, RoutedEventArgs e)
+        private void GenreAdventureSelection(object sender, RoutedEventArgs e)
         {
             selectionListBox.ItemsSource = null;
             if (isSelected)
@@ -214,7 +204,7 @@ namespace Shop
             selectionListBox.ItemsSource = selectionList;
         }
 
-        public void GenreFantasySelection(object sender, RoutedEventArgs e)
+        private void GenreFantasySelection(object sender, RoutedEventArgs e)
         {
             selectionListBox.ItemsSource = null;
             if (isSelected)
@@ -229,7 +219,7 @@ namespace Shop
             selectionListBox.ItemsSource = selectionList;
         }
 
-        public void PriceSelection(object sender, RoutedEventArgs e)
+        private void PriceSelection(object sender, RoutedEventArgs e)
         {
             selectionListBox.ItemsSource = null;
             if (isSelected)

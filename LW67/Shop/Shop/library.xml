@@ -4,8 +4,8 @@
     <ID>0</ID>
     <name>Свободные</name>
     <author>Эшли Дьюал</author>
-    <price>69</price>
-    <count>12</count>
+    <price>61.1</price>
+    <count>111</count>
     <genre>Romance</genre>
     <rate>2</rate>
     <description>Жизнь Зои кардинально меняется после смерти матери. Переезд в большой город. Знакомство с отцом, которого она никогда не знала. Первая любовь</description>
@@ -28,7 +28,7 @@
     <ID>2</ID>
     <name>Царство Проклятых</name>
     <author>Керри Манискалко</author>
-    <price>27.2</price>
+    <price>27.1</price>
     <count>8</count>
     <genre>Fantasy</genre>
     <rate>4</rate>

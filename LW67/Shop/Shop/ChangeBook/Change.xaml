@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shop.ChangeBook"
         mc:Ignorable="d"
-        Title="Change" Height="450" Width="400">
+        Title="{DynamicResource change_ChangeWnd}" Height="450" Width="400">
+    <Window.Resources></Window.Resources>
 
     <Grid x:Name="ChangeBookGrid" Background="Cornsilk">
         <Grid.RowDefinitions>
