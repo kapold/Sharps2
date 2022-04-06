@@ -1,0 +1,53 @@
+﻿<Window x:Class="Shop.SearchNameWnd.SearchName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shop.SearchNameWnd"
+        mc:Ignorable="d"
+        Title="{DynamicResource searchTitleByName}" Height="450" Width="400">
+    <Window.Resources></Window.Resources>
+
+    <Grid Background="Cornsilk">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="174*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="searchListBox" Style="{StaticResource DataTrig}" Background="#FFCC9999" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,82,0,0" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <Image x:Name="BookImage" Source="{Binding Path=imagePath}" Width="100" Height="150"></Image>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <!-- Название книги-->
+                            <TextBlock x:Name="BookName" FontSize="16" Text="{Binding Path=name}" Margin="0,2,0,0" Foreground="Black" FontWeight="DemiBold"/>
+                            <!-- Автор -->
+                            <TextBlock FontSize="16" Text="{Binding Path=author}" Foreground="Black" Margin="0,0,0,20"/>
+                            <!-- Цена -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="{Binding Path=price}" HorizontalAlignment="Center" Foreground="White"/>
+                                <TextBlock FontSize="16" Text=" BYN" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                            <!-- Количество -->
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="16" Text="Количество: " HorizontalAlignment="Center" Foreground="Black"/>
+                                <TextBlock FontSize="16" Text="{Binding Path=count}" HorizontalAlignment="Center" Foreground="White"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Поле поиска -->
+        <TextBox TextChanged="SearchByName" x:Name="searchNameTextBox" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Margin="70,29,70,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="70,10,0,0" TextWrapping="Wrap" Text="{DynamicResource name_AddForm}" VerticalAlignment="Top" FontSize="16" FontWeight="Normal" FontFamily="Segoe UI"/>
+
+    </Grid>
+
+</Window>

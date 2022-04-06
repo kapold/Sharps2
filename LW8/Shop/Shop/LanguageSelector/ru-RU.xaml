@@ -1,0 +1,76 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Main window -->
+    <v:String x:Key="titleName">Магазин</v:String>
+
+    <!-- Search Window -->
+    <v:String x:Key="searchTitle">Поиск</v:String>
+    <v:String x:Key="searchTitleByName">Поиск</v:String>
+    <v:String x:Key="searchButton">Поиск</v:String>
+    <v:String x:Key="searchButtonByName">Поиск</v:String>
+    <v:String x:Key="fromBox">От</v:String>
+    <v:String x:Key="toBox">До</v:String>
+    <v:String x:Key="nameSearch">По названию</v:String>
+    <v:String x:Key="rangeSearch">По диапазону</v:String>
+
+    <!-- Menu -->
+    <v:String x:Key="menuAddButton">Добавить</v:String>
+    <v:String x:Key="menuSwitchLang">Смена языка</v:String>
+        <v:String x:Key="menuRuLang">Русский</v:String>
+        <v:String x:Key="menuEuLang">Английский</v:String>
+    <v:String x:Key="menuXmlIn">Загрузить</v:String>
+    <v:String x:Key="menuXmlOut">Вывести</v:String>
+    <v:String x:Key="menuSort">Сортировка</v:String>
+        <v:String x:Key="menuSortPrice">По цене</v:String>
+        <v:String x:Key="menuSortCount">По количеству</v:String>
+    <v:String x:Key="menuSearch">Поиск</v:String>
+    <v:String x:Key="menuSelection">Выборка</v:String>
+        <v:String x:Key="menuSelectionPrice">По цене</v:String>
+        <v:String x:Key="menuSelectionGenre">По жанру</v:String>
+            <v:String x:Key="menuFantasySelect">Фентези</v:String>
+            <v:String x:Key="menuAdventureSelect">Приключения</v:String>
+            <v:String x:Key="menuDetectiveSelect">Детектив</v:String>
+            <v:String x:Key="menuRomanceSelect">Роман</v:String>
+    <v:String x:Key="menuSwitchStyle">Стили</v:String>
+        <v:String x:Key="menuCornsilkStyle">Бежево-розовый</v:String>
+        <v:String x:Key="menuBlackStyle">Черно-белый</v:String>
+    <v:String x:Key="undoButton">Назад</v:String>
+    <v:String x:Key="redoButton">Вперед</v:String>
+
+    <!-- TextBox -->
+    <v:String x:Key="textBox">Покупайте новые книги </v:String>
+    <v:String x:Key="textBoxAfter">по хорошим ценам!</v:String>
+
+    <!-- AddBook Window -->
+    <v:String x:Key="title_AddForm">Добавить книгу</v:String>
+    <v:String x:Key="add_AddForm">Добавить</v:String>
+    <v:String x:Key="addIm_AddForm">Выбрать изображение</v:String>
+    
+    <v:String x:Key="name_AddForm">Название:</v:String>
+    <v:String x:Key="author_AddForm">Автор:</v:String>
+    <v:String x:Key="price_AddForm">Цена:</v:String>
+    <v:String x:Key="count_AddForm">Количество:</v:String>
+    <v:String x:Key="description_AddForm">Описание:</v:String>
+    <v:String x:Key="year_AddForm">Год издания:</v:String>
+    <v:String x:Key="rating_AddForm">Рейтинг:</v:String>
+    <v:String x:Key="genre_AddForm">Жанр:</v:String>
+        <v:String x:Key="genreDetective_AddForm">Детектив</v:String>
+        <v:String x:Key="genreFantasy_AddForm">Фантастика</v:String>
+        <v:String x:Key="genreRomance_AddForm">Роман</v:String>
+        <v:String x:Key="genreAdventure_AddForm">Приключения</v:String>
+
+    <!-- Change Window -->
+    <v:String x:Key="change_ChangeWnd">Изменить</v:String>
+
+    <!-- Selection-->
+    <v:String x:Key="selectionTextBox">Выборка</v:String>
+    
+    <!-- ListBox -->
+    <v:String x:Key="countLB">Количество: </v:String>
+    <v:String x:Key="descriptionLB">Описание</v:String>
+    <v:String x:Key="changeLB">Изменить</v:String>
+    <v:String x:Key="deleteLB">Удалить</v:String>
+
+</ResourceDictionary>

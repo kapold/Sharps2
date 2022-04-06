@@ -1,0 +1,77 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Main window -->
+    <v:String x:Key="titleName">Shop</v:String>
+
+    <!-- Search Window -->
+    <v:String x:Key="searchTitle">Search</v:String>
+    <v:String x:Key="searchTitleByName">Search</v:String>
+    <v:String x:Key="searchButton">Search</v:String>
+    <v:String x:Key="searchButtonByName">Search</v:String>
+    <v:String x:Key="fromBox">From</v:String>
+    <v:String x:Key="toBox">To</v:String>
+    <v:String x:Key="nameSearch">By name</v:String>
+    <v:String x:Key="rangeSearch">By range</v:String>
+    
+    <!-- Menu -->
+    <v:String x:Key="menuAddButton">Add</v:String>
+    <v:String x:Key="menuSwitchLang">Switch Lang</v:String>
+        <v:String x:Key="menuRuLang">Russian</v:String>
+        <v:String x:Key="menuEuLang">English</v:String>
+    <v:String x:Key="menuXmlIn">In</v:String>
+    <v:String x:Key="menuXmlOut">Out</v:String>
+    <v:String x:Key="menuSort">Sort</v:String>
+        <v:String x:Key="menuSortPrice">By price</v:String>
+        <v:String x:Key="menuSortCount">By count</v:String>
+    <v:String x:Key="menuSearch">Search</v:String>
+    <v:String x:Key="menuSelection">Selection</v:String>
+        <v:String x:Key="menuSelectionPrice">By price</v:String>
+        <v:String x:Key="menuSelectionGenre">By Genre</v:String>
+            <v:String x:Key="menuFantasySelect">Fantasy</v:String>
+            <v:String x:Key="menuAdventureSelect">Adventure</v:String>
+            <v:String x:Key="menuDetectiveSelect">Detective</v:String>
+            <v:String x:Key="menuRomanceSelect">Romance</v:String>
+    <v:String x:Key="menuSwitchStyle">Styles</v:String>
+        <v:String x:Key="menuCornsilkStyle">Cornsilk-pink</v:String>
+        <v:String x:Key="menuBlackStyle">Black-white</v:String>
+    <v:String x:Key="undoButton">Undo</v:String>
+    <v:String x:Key="redoButton">Redo</v:String>
+
+    <!-- TextBox -->
+    <v:String x:Key="textBox">Buy new books </v:String>
+    <v:String x:Key="textBoxAfter">at good prices!</v:String>
+    
+    <!-- AddBook Window -->
+    <v:String x:Key="title_AddForm">Add Book</v:String>
+    <v:String x:Key="add_AddForm">Add</v:String>
+    <v:String x:Key="addIm_AddForm">Add image</v:String>
+
+    <v:String x:Key="name_AddForm">Name:</v:String>
+    <v:String x:Key="author_AddForm">Author:</v:String>
+    <v:String x:Key="price_AddForm">Price:</v:String>
+    <v:String x:Key="count_AddForm">Count:</v:String>
+    <v:String x:Key="description_AddForm">Description:</v:String>
+    <v:String x:Key="year_AddForm">Year:</v:String>
+    <v:String x:Key="rating_AddForm">Rating:</v:String>
+    <v:String x:Key="genre_AddForm">Genre:</v:String>
+        <v:String x:Key="genreDetective_AddForm">Detective</v:String>
+        <v:String x:Key="genreFantasy_AddForm">Fantasy</v:String>
+        <v:String x:Key="genreRomance_AddForm">Romance</v:String>
+        <v:String x:Key="genreAdventure_AddForm">Adventure</v:String>
+
+    <!-- Change Window -->
+    <v:String x:Key="change_ChangeWnd">Change</v:String>
+    
+    <!-- Selection-->
+    <v:String x:Key="selectionTextBox">Selection</v:String>
+    
+    <!-- ListBox -->
+    <v:String x:Key="countLB">Count: </v:String>
+    <v:String x:Key="descriptionLB">Description</v:String>
+    <v:String x:Key="changeLB">Change</v:String>
+    <v:String x:Key="deleteLB">Delete</v:String>
+    
+
+</ResourceDictionary>
