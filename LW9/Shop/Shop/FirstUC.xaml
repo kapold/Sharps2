@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Shop.FirstUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Shop.Classes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <local:Vocabulary Price="100" Title="TestVoc" x:Key="firstVocabulary"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="firstUC" DataContext="{StaticResource firstVocabulary}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Button Content="Try" Click="GetPriceDP" Height="42" Margin="92,64,92,0" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Width="216"/>
+        <TextBox Text="{Binding Price, Mode=TwoWay}" Height="40" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,48,10,0" FontSize="20" HorizontalAlignment="Right" Width="168"/>
+        <TextBlock Margin="222,22,10,75" TextWrapping="Wrap" Text="Price:" FontSize="16"/>
+        <TextBlock Margin="10,22,222,75" TextWrapping="Wrap" Text="Title:" FontSize="16"/>
+        <TextBox Text="{Binding Title, Mode=TwoWay}" Height="40" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,48,0,0" FontSize="20" HorizontalAlignment="Left" Width="168"/>
+
+
+    </Grid>
+</UserControl>
