@@ -33,9 +33,9 @@ namespace LW10
             string sqlAddress = $"INSERT INTO Addresses(ID, City, C_Index, Street, Home) " +
                 $"VALUES({s.ID}, '{s.City}', {s.Index}, '{s.Street}', '{s.Home}');";
 
-            //SqlTransaction transaction = connection.BeginTransaction();
-            //SqlCommand commandTrans = connection.CreateCommand();
-            //commandTrans.Transaction = transaction;
+            SqlTransaction transaction = connection.BeginTransaction();
+            SqlCommand commandTrans = connection.CreateCommand();
+            commandTrans.Transaction = transaction;
 
             try
             {
@@ -44,12 +44,12 @@ namespace LW10
                 SqlCommand command = new SqlCommand(sqlStudent, connection);
                 command.ExecuteNonQuery();
 
-                //transaction.Commit();
+                transaction.Commit();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //transaction.Rollback();
+                transaction.Rollback();
             }
         }
 
@@ -140,8 +140,10 @@ namespace LW10
             }
         }
 
-        public void ExecuteQuery(string query)
+        public List<Student> ExecuteQuery(string query)
         {
+            List<Student> list = new List<Student>();
+            Student student = new Student();
             string sql = $"{query}";
 
             try
@@ -153,6 +155,39 @@ namespace LW10
             {
                 MessageBox.Show(ex.Message);
             }
+
+            if (query.Split(' ')[0].ToUpper() == "SELECT")
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        student = new Student();
+
+                        student.Name = reader["Name"].ToString();
+                        student.Surname = reader["Surname"].ToString();
+                        student.Patronymic = reader["Patronymic"].ToString();
+                        student.Speciality = reader["Speciality"].ToString();
+                        student.Birthday = Convert.ToDateTime(reader["Birthday"]);
+                        student.Course = Convert.ToInt32(reader["Course"]);
+                        student.Group = Convert.ToInt32(reader["GroupNumber"]);
+                        student.Gender = reader["Gender"].ToString();
+                        student.PhoneNumber = reader["PhoneNumber"].ToString();
+                        student.ImageSrc = reader["ImageSrc"].ToString();
+                        student.ID = Convert.ToInt32(reader["ID"]);
+                        student.Street = reader["Street"].ToString();
+                        student.Home = Convert.ToInt32(reader["Home"]);
+                        student.City = reader["City"].ToString();
+                        student.Index = Convert.ToInt32(reader["C_Index"]);
+
+                        list.Add(student);
+                    }
+                }
+            }
+
+            return list;
         }
     }
 }

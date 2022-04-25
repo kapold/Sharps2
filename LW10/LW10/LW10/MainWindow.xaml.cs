@@ -40,10 +40,10 @@ namespace LW10
             {
                 MessageBox.Show(e.Message);
 
-                //string createSql = "CREATE DATABASE universityDB;";
-                //SqlConnection connection = new SqlConnection(connectionString);
-                //SqlCommand createDBCommand = new SqlCommand(createSql, connection);
-                //createDBCommand.ExecuteNonQuery();
+                string createSql = "CREATE DATABASE universityDB;";
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand createDBCommand = new SqlCommand(createSql, connection);
+                createDBCommand.ExecuteNonQuery();
             }
 
             DataBase dataBase = new DataBase();
@@ -131,7 +131,8 @@ namespace LW10
         {
             string query = QTB.Text;
             DataBase dataBase = new DataBase();
-            dataBase.ExecuteQuery(query);
+            dataTable.ItemsSource = dataBase.ExecuteQuery(query);
+
             dataBase.Dispose();
         }
 

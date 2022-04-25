@@ -58,21 +58,22 @@
         <Button Content="Изменить" Click="ChangeStudent" Height="32" Grid.Row="1" VerticalAlignment="Center" FontSize="18" FontFamily="Century Gothic" Grid.Column="2" Margin="32,0,32,0"/>
         <Button Content="Вывести" Click="ShowStudents" Height="32" Grid.Row="1" VerticalAlignment="Center" FontSize="18" FontFamily="Century Gothic" Grid.Column="3" Margin="32,0,32,0"/>
 
-        <Button Grid.Column="3" Click="MoveRight_Table" Content="-&gt;" Height="30" Margin="163,10,32,0" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold"/>
-        <Button Grid.Column="3" Click="MoveLeft_Table" Content="&lt;-" Height="30" Margin="128,10,67,0" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <Button Grid.Column="3" Click="MoveRight_Table" Content="↓" Height="30" Margin="163,10,32,0" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold"/>
+        <Button Grid.Column="3" Click="MoveLeft_Table" Content="↑" Height="30" Margin="128,10,67,0" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold"/>
         <Button Grid.Column="3" Content="Запрос" Click="Query_Click" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="103" FontSize="20" FontFamily="Century Gothic"/>
         <Popup x:Name="QueryPopUp" Placement="Mouse"  
-         PlacementRectangle="0,0,30,50"  AllowsTransparency="True" PopupAnimation="Fade"  StaysOpen="True"   Margin="340,164,328,99" Grid.ColumnSpan="4">
-            <Grid Height="114"  Background="White" Width="202">
+               PlacementRectangle="0,0,30,50"  AllowsTransparency="True" PopupAnimation="Fade"  StaysOpen="True"   Margin="340,164,328,99" Grid.ColumnSpan="4">
+            <Grid Height="114"  Background="White" Width="200">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="254.4"/>
                 </Grid.RowDefinitions>
+                
                 <Button x:Name="CloseQuery" Content="X" Margin="172,10,0,0" Click="CloseQuery_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="23"/>
-                <Button x:Name="OkQuery"  Content="Exec" Margin="172,34,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" Click="OkQuery_Click" HorizontalAlignment="Left" Width="23" Height="72" VerticalAlignment="Top"/>
-                <TextBox x:Name="QTB" HorizontalAlignment="Left" Height="96" Margin="10,10,0,0" TextWrapping="Wrap" Text="Запрос" VerticalAlignment="Top" Width="157"/>
+                <Button x:Name="OkQuery"  Content="Try" Margin="172,34,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch" Click="OkQuery_Click" HorizontalAlignment="Left" Width="23" Height="72" VerticalAlignment="Top"/>
+                <TextBox x:Name="QTB" HorizontalAlignment="Left" Height="96" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
 
             </Grid>
         </Popup>
