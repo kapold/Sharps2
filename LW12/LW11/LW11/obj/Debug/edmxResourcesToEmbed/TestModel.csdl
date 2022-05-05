@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="universityDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="C_Index" Type="Int32" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Home" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Students" Relationship="Self.FK__Students__Addres__267ABA7A" FromRole="Addresses" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AddressID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Speciality" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="0" />
+    <Property Name="Course" Type="Int32" />
+    <Property Name="GroupNumber" Type="Int32" />
+    <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="ImageSrc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Address" Relationship="Self.FK__Students__Addres__267ABA7A" FromRole="Students" ToRole="Addresses" />
+  </EntityType>
+  <Association Name="FK__Students__Addres__267ABA7A">
+    <End Role="Addresses" Type="Self.Address" Multiplicity="0..1" />
+    <End Role="Students" Type="Self.Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="universityDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="FK__Students__Addres__267ABA7A" Association="Self.FK__Students__Addres__267ABA7A">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

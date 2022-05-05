@@ -1,0 +1,58 @@
+﻿<Window x:Class="LW11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LW11"
+        mc:Ignorable="d"
+        Title="Главное окно" 
+        WindowStartupLocation="CenterScreen"
+        Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <ComboBox x:Name="CBTable" VerticalAlignment="Center" Margin="32,0,26,0" Text="Products" SelectedValue="Products" Grid.Row="1" SelectionChanged="CBTable_SelectionChanged"  Height="32" Grid.ColumnSpan="2" FontSize="16">
+            <ComboBoxItem>Students</ComboBoxItem>
+            <ComboBoxItem>Addresses</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.ColumnSpan="2" Height="43" Margin="44,22,10,0" TextWrapping="Wrap" Text="Таблица:" VerticalAlignment="Top" FontSize="20" FontFamily="Century Gothic"/>
+        <DataGrid x:Name="dataTable" CanUserAddRows="False" Grid.ColumnSpan="5" Margin="32,48,32,21" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="studentIDColumn" Header="StudentID" Binding="{Binding StudentID}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="NameColumn" Header="Name" Binding="{Binding Name}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="SurnameColumn" Header="Surname" Binding="{Binding Surname}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="PatronymicColumn" Header="Patronymic" Binding="{Binding Patronymic}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="SpecialityColumn" Header="Speciality" Binding="{Binding Speciality}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="BirthdayColumn" Header="Birthday" Binding="{Binding Birthday}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="CourseColumn" Header="Course" Binding="{Binding Course}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="GroupColumn" Header="Group" Binding="{Binding GroupNumber}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="GenderColumn" Header="Gender" Binding="{Binding Gender}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="PhoneColumn" Header="Phone" Binding="{Binding PhoneNumber}" Visibility="Hidden"/>
+
+                <DataGridTextColumn x:Name="IDColumn" Header="AddressID" Binding="{Binding ID}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="CityColumn" Header="City" Binding="{Binding City}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="IndexColumn" Header="Index" Binding="{Binding C_Index}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="StreetColumn" Header="Street" Binding="{Binding Street}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="HomeColumn" Header="Home" Binding="{Binding Home}" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="Add" IsEnabled="False" Click="AddDB" Content="Добавить" Height="32" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" Margin="32,8,32,0" Grid.Column="2"/>
+        <Button x:Name="Delete" Content="Удалить" Click="DeleteDB" Height="32" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" Grid.Column="4" Margin="32,45,32,0"/>
+        <Button x:Name="Change" IsEnabled="False" Click="ChangeDB" Content="Изменить" Height="32" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" Grid.Column="2" Margin="32,44,32,0"/>
+        <Button x:Name="Update" Content="Вывести" Click="UpdateInfo" Height="32" Grid.Row="1" VerticalAlignment="Top" FontSize="18" FontFamily="Century Gothic" Grid.Column="4" Margin="32,8,32,0"/>
+
+    </Grid>
+
+</Window>
